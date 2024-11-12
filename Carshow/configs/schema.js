@@ -23,4 +23,6 @@ export const CarListing = pgTable("carListing", {
   door: integer("door"),
   features: json("features"),
   img: varchar("img"),
+  createdBy:varchar('createdBy'),
+  postedOn:varchar('postedOn')
 });

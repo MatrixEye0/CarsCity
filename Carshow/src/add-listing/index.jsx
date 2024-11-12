@@ -11,11 +11,13 @@ import { db } from "./../../configs";
 import { CarListing } from "./../../configs/schema";
 import IconField from "./components/iconField";
 import UploadImages from "./components/UploadImages";
+import moment from 'moments'
 
 function AddListing() {
   const [formData, setFormData] = useState({});
   const [featuresData, setFeaturesData] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
+  const {user}=useUser();
 
   const handleInputChange = (name, value) => {
     setFormData((prevData) => ({
@@ -63,6 +65,8 @@ function AddListing() {
       const result = await db.insert(CarListing).values({
         ...formData,
         features: featuresData,
+        createdBy:user?.primaryEmailAddres?.emailAddress,
+        postedOn:moment().format('DD/MM/yyyy'),
         img: img.file.storagePath,
       });
       if (result) {
