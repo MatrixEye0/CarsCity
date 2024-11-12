@@ -1,0 +1,77 @@
+{
+    "features":[
+        {
+            "label":"Air Conditioner",
+            "name":"airconditioner",
+            "fieldType":"checkbox"
+        },
+        {
+            "label":"Leather Seats",
+            "name":"leatherseats",
+            "fieldType":"checkbox"
+        },
+        {
+            "label":"Touchscreen Display",
+            "name":"touchscreendisplay",
+            "fieldType":"checkbox"
+        },
+        {
+            "label":"Odo Meter",
+            "name":"odometer",
+            "fieldType":"checkbox"
+        },
+        {
+            "label":"Brake Assist",
+            "name":"brakeassist",
+            "fieldType":"checkbox"
+        },
+
+        {
+            "label":"Air Bag",
+            "name":"airbag",
+            "fieldType":"checkbox"
+        },
+
+        {
+            "label":"Fog Light",
+            "name":"foglight",
+            "fieldType":"checkbox"
+        },
+
+        {
+            "label":"Bluetooth",
+            "name":"bluetooth",
+            "fieldType":"checkbox"
+        },
+
+        {
+            "label":"Vanity Mirror",
+            "name":"vanitymirror",
+            "fieldType":"checkbox"
+        },
+
+        {
+            "label":"Power Stearing",
+            "name":"powerstearing",
+            "fieldType":"checkbox"
+        },
+
+        {
+            "label":"Rain Sensing Wiper",
+            "name":"rainsensingwiper",
+            "fieldType":"checkbox"
+        },
+
+        {
+            "label":"Child Safety Locks",
+            "name":"childsafetylocks",
+            "fieldType":"checkbox"
+        },
+      
+        {
+            "label":"Heater",
+            "name":"heater",
+            "fieldType":"checkbox"
+        }
+    ]
+}

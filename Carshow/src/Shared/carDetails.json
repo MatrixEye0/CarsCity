@@ -1,0 +1,198 @@
+{
+  "carDetails": [
+    {
+      "label": "Listing Title",
+      "name": "listingtitle",
+      "fieldType": "text",
+      "required": true,
+      "column": 2,
+      "icon": "FaClipboardList"
+    },
+    {
+      "label": "TagLine",
+      "name": "tagline",
+      "fieldType": "text",
+      "column": 2,
+      "icon": "FaTag"
+    },
+
+    {
+      "label": "Original Price",
+      "name": "originalprice",
+      "fieldType": "text",
+      "required": true,
+      "column": 1,
+      "icon": "FaDollarSign"
+    },
+    {
+      "label": "Selling Price",
+      "name": "sellingprice",
+      "fieldType": "text",
+      "required": true,
+      "column": 1,
+      "icon": "FaDollarSign"
+    },
+    {
+      "label": "Model",
+      "name": "model",
+      "fieldType": "text",
+      "required": true,
+      "column": 1,
+      "icon": "FaCarSide"
+    },
+    {
+      "label": "Year",
+      "name": "year",
+      "fieldType": "text",
+      "required": true,
+      "column": 1,
+      "icon": "FaCalendarAlt"
+    },
+    {
+      "label": "Category",
+      "name": "Category",
+      "fieldType": "dropdown",
+      "options": [
+        "Seden",
+        "SUV",
+        "Truck",
+        "Coupe",
+        "Convertible",
+        "Van",
+        "Hatchback",
+        "Electric",
+        "Hybrid"
+      ],
+      "required": true,
+      "column": 1,
+      "icon": "FaCarSide"
+    },
+    {
+      "label": "Condition",
+      "name": "Condition",
+      "fieldType": "dropdown",
+      "options": ["New", "Used", "Certified Pre-Owned"],
+      "required": true,
+      "column": 1,
+      "icon": "FaCogs"
+    },
+    {
+      "label": "Make",
+      "name": "make",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": [
+        "Audi",
+        "Aston Martin",
+        "Bugatti",
+        "BMW",
+        "Rolls Royal",
+        "Mercedes",
+        "Cadillac",
+        "Bentley",
+        "Toyota",
+        "Hundai"
+      ],
+
+      "column": 1,
+      "icon": "FaIndustry"
+    },
+    {
+      "label": "Offer Type",
+      "name": "offertype",
+      "fieldType": "dropdown",
+      "options": ["New offer", "Old Offer"],
+      "column": 2,
+      "icon": "FaDollarSign"
+    },
+
+    {
+      "label": "Drive Type",
+      "name": "drivetype",
+      "fieldType": "dropdown",
+      "options": ["FWD", "RWD", "AWD"],
+      "required": true,
+      "column": 1,
+      "icon": "FaCar"
+    },
+    {
+      "label": "Transmission",
+      "name": "Transmission",
+      "fieldType": "dropdown",
+      "options": [
+        "Manual transmission",
+        "Automatic transmission",
+        "Dual-clutch transmission (DCT)"
+      ],
+      "required": true,
+      "column": 1,
+      "icon": "FaCar"
+    },
+    {
+      "label": "Fuel Type",
+      "name": "fueltype",
+      "fieldType": "dropdown",
+      "options": ["Petrol", "Diesel", "CNG"],
+      "required": true,
+      "column": 1,
+      "icon": "FaChargingStation"
+    },
+
+    {
+      "label": "Mileage",
+      "name": "mileage",
+      "fieldType": "text",
+      "required": true,
+      "column": 1,
+      "icon": "FaRoad"
+    },
+
+    {
+      "label": "Engine Size",
+      "name": "enginesize",
+      "fieldType": "text",
+      "required": true,
+      "column": 1,
+      "icon": "FaCogs"
+    },
+
+    {
+      "label": "Cylinder",
+      "name": "cylinder",
+      "fieldType": "text",
+      "required": true,
+      "column": 1,
+      "icon": "FaGasPump"
+    },
+
+    {
+      "label": "Colour",
+      "name": "Colour",
+      "fieldType": "dropdown",
+      "options": [
+        "Black",
+        "Red",
+        "White",
+        "Green",
+        "Brown",
+        "Orange",
+        "Purple",
+        "Yellow",
+        "Pink",
+        "Blue"
+      ],
+      "required": true,
+      "column": 1,
+      "icon": "FaCar"
+    },
+
+    {
+      "label": "Door",
+      "name": "door",
+      "fieldType": "text",
+      "required": true,
+      "column": 1,
+      "icon": "GiCarDoor"
+    }
+  ]
+}
