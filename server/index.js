@@ -12,6 +12,6 @@ app.use(
   })
 );
 app.use(router)
-app.listen(5173, () => {
-  console.log("server is running on port 5173!");
+app.listen(5000, () => {
+  console.log("server is running on port 5000!");
 });
