@@ -11,7 +11,7 @@ function CarItem({car}) {
     <div className='rounded-xl bg-white border hover:shadow-md cursor-pointer'>
      <h2 className='absolute m-2 bg-green-500 px-2 rounded-full text-sm  text-white'>New</h2>
 
-        <img src={car?.image} width={'100%'} height={250} 
+        <img src={car?.images[0].imageUrl} width={'100%'} height={250} 
         className='rounded-t-xl'
         />
         <div className='p-4'>

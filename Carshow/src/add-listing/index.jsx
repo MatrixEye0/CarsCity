@@ -11,13 +11,14 @@ import { db } from "./../../configs";
 import { CarListing } from "./../../configs/schema";
 import IconField from "./components/iconField";
 import UploadImages from "./components/UploadImages";
-import moment from 'moments'
+import moment from "moment";
+import { useUser } from "@clerk/clerk-react";
 
 function AddListing() {
   const [formData, setFormData] = useState({});
   const [featuresData, setFeaturesData] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
-  const {user}=useUser();
+  const { user } = useUser();
 
   const handleInputChange = (name, value) => {
     setFormData((prevData) => ({
@@ -52,7 +53,8 @@ function AddListing() {
     try {
       const formData = new FormData();
       formData.append("img", selectedFile);
-      const response = await fetch("http://localhost:5000/api/upload", {
+      const response = await fetch ("http://localhost:5000/api/upload", 
+      {
         method: "POST",
         body: formData,
       });
@@ -65,8 +67,8 @@ function AddListing() {
       const result = await db.insert(CarListing).values({
         ...formData,
         features: featuresData,
-        createdBy:user?.primaryEmailAddres?.emailAddress,
-        postedOn:moment().format('DD/MM/yyyy'),
+        createdBy: user?.primaryEmailAddres?.emailAddress,
+        postedOn: moment().format("DD/MM/yyyy"),
         img: img.file.storagePath,
       });
       if (result) {
@@ -78,7 +80,7 @@ function AddListing() {
     }
   };
 
-
+  
   return (
     <div>
       <Header />
