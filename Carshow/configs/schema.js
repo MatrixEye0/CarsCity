@@ -22,6 +22,12 @@ export const CarListing = pgTable("carListing", {
   Colour: varchar("Colour"),
   door: integer("door"),
   features: json("features"),
-  img: varchar("img"),
+  CarImages: varchar("CarImages"),
   createdBy:varchar('createdBy'),
-  postedOn:varchar('postedOn') });
+  postedOn:varchar('postedOn') })
+  
+  export const CarImages=pgTable('carImages',{
+    id:serial('id').primaryKey(),
+    imageUrl:varchar('imageUrl').notNull(),
+    carListingId:integer('carListingId').notNull().references(()=>CarListing.id)
+  })

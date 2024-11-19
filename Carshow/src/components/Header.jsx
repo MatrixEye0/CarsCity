@@ -20,7 +20,7 @@ function Header() {
           New
         </li>
         <li className="font-medium hover:scale-105 translate-all cursor-pointer hover:text-primary">
-          preowend
+          Preowend
         </li>
       </ul>
 

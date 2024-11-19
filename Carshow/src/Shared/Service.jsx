@@ -5,7 +5,25 @@ const FormatResult=(resp)=>{
         if(!result[listingId]){
             result[listingId]={
                 car:item.carListing,
+                images:[]
             }
         }
+
+        if(item.carImages)
+        {
+            result[listingId].images.push(item.carImages)
+        }
     }) 
+    const finalResult = [];
+    result.forEach((item)=>{
+finalResult.push({
+    ...item.car,
+    images:item.images
+});
+    });
+    return finalResult;
+}
+
+export default{
+    FormatResult
 }

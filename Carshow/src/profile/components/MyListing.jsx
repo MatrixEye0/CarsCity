@@ -21,6 +21,10 @@ function MyListing() {
         .leftJoin(CarImages, eq(CarListing.id, CarImages.carListingId))
         .where(eq(CarListing.createdBy, user.primaryEmailAddress))
         .orderBy(desc(CarListing.id));
+         
+        const resp=Service.FormatResult(result)
+        setCarlist(resp);
+
       setListings(result);
     } catch (error) {
       console.error('Error fetching listings:', error);
@@ -56,7 +60,7 @@ function MyListing() {
               className='p-4 border rounded shadow-md flex flex-col justify-between'
             >
               <img
-                src={listing.CarImages?.img || '/placeholder.png'}
+                src={listing.CarImages?.img || '/ccc.png'}
                 alt={listing.CarListing?.listingtitle || 'Listing'}
                 className='w-full h-48 object-cover rounded'
               />

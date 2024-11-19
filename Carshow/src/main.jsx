@@ -7,6 +7,8 @@ import Contact from './contact'
 import {ClerkProvider, SignIn} from '@clerk/clerk-react'
 import Profile from './profile'
 import AddListing from './add-listing'
+import SearchByCategory from './search/[category]'
+import SearchByOptions from './search'
 
 
 const router=createBrowserRouter([
@@ -30,6 +32,14 @@ const router=createBrowserRouter([
     element: <div className='flex w-full items-center justify-center mt-24'>
       <SignIn/>
     </div>
+  },
+  {
+    path:'/search/:category',
+    element:<SearchByCategory/>
+  },
+  {
+    path:'/search',
+    element:<SearchByOptions/>
   }
 ])
 
