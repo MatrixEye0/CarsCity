@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { CarImages, CarListing } from "./../../configs/schema";
+import { CarListing } from "./../../configs/schema";
 import { desc, eq } from "drizzle-orm";
 import { useState, useEffect } from "react";
 import Service from "@/Shared/Service";
@@ -23,8 +23,6 @@ useEffect(()=>{
 const GetPopularCarlist= async ()=>{
   const result= await db.select() 
   .from(CarListing)
-  .leftJoin(CarImages, eq(CarListing.id, CarImages.carListingId))
-  
   .orderBy(desc(CarListing.id));
    
   const resp=Service.FormatResult(result);

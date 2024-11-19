@@ -27,13 +27,6 @@ function AddListing() {
     }));
   };
 
-  const handleCheckboxChange = (name, checked) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: checked,
-    }));
-  };
-
   const handleTextareaChange = (name, value) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -41,35 +34,41 @@ function AddListing() {
     }));
   };
 
-  const handleFeatureChange = (name, value) => {
-    setFeaturesData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+  const handleFeatureChange = (name, checked) => {
+    setFeaturesData((prevData) => {
+      if (checked) {
+        // Add the feature if checked
+        return [...prevData, name];
+      } else {
+        // Remove the feature if unchecked
+        return prevData.filter((feature) => feature !== name);
+      }
+    });
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const formData = new FormData();
-      formData.append("img", selectedFile);
+      const imgFormData = new FormData();
+      imgFormData.append("img", selectedFile);
       const response = await fetch ("http://localhost:5000/api/upload", 
       {
         method: "POST",
-        body: formData,
+        body: imgFormData,
       });
 
       if (!response.ok) {
         throw new Error("Upload failed");
       }
+      console.log(formData)
       const img = await response.json();
 
       const result = await db.insert(CarListing).values({
         ...formData,
         features: featuresData,
-        createdBy: user?.primaryEmailAddres?.emailAddress,
+        createdBy: user?.primaryEmailAddress?.emailAddress,
         postedOn: moment().format("DD/MM/yyyy"),
-        img: img.file.storagePath,
+        CarImages: img.file.storagePath,
       });
       if (result) {
         console.log("Data Saved");
@@ -138,7 +137,7 @@ function AddListing() {
                   <Checkbox
                     checked={formData[item.name] || false}
                     onCheckedChange={(value) =>
-                      handleCheckboxChange(item.name, value)
+                      handleFeatureChange(item.name, value)
                     }
                   />
                   <h2>{item.label}</h2>

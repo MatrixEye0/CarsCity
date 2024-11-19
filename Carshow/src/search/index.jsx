@@ -2,7 +2,6 @@ import { CarListing } from './../../configs/schema';
 import { db } from './../../configs';
 import React, { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { CarImages } from './../../configs/schema';
 import { eq } from 'drizzle-orm';
 import Service from '@/Shared/Service';
 
@@ -19,8 +18,7 @@ useEffect(()=>{
 
 const GetCarList=async()=>{
     const result =await db.select().from(CarListing)
-    .innerJoin(CarImages,eq(CarListing.id,CarImages.carListingId))
-    .where(condition!=undefined&&eq(CarListing.condition,condition))
+    .where(condition!=undefined&&eq(CarListing.Condition,condition))
     .where(make!=undefined&&eq(CarListing.make,make))
     
     const resp=Service.FormatResult(result);

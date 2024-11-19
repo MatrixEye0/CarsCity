@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Search from '@/components/Search'
-import { CarImages, CarListing } from './../../../configs/schema';
+import { CarListing } from './../../../configs/schema';
 import { eq } from 'drizzle-orm';
 import React, { useEffect , useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -21,7 +21,6 @@ function SearchByCategory () {
 
     const GetCarList=async()=>{
         const result=await db.select().from(CarListing)
-        .innerJoin(CarImages,eq(CarListing.id,CarImages.carListingId))
         .where(eq(CarListing.Category,category))
 
         const resp=Service.FormatResult(result);
