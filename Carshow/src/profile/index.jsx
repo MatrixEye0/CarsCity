@@ -14,11 +14,11 @@ function Profile() {
      <TabsList className='w-full flex justify-start gap-3 bg-slate-100 rounded'>
 
     <TabsTrigger value="my-listing">My Listing</TabsTrigger>
-    <TabsTrigger value="inbox">Inbox</TabsTrigger>
+   
     <TabsTrigger value="profile">Profile</TabsTrigger>
   </TabsList>
   <TabsContent value="my-listing"> <MyListing/> </TabsContent>
-  <TabsContent value="inbox">inbox</TabsContent>
+ 
   <TabsContent value="profile">profile</TabsContent>
 </Tabs>
 

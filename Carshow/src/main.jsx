@@ -11,6 +11,9 @@ import SearchByCategory from './search/[category]'
 import SearchByOptions from './search'
 import ListingDetail from './listing-details/[id]'
 import Transaction from './Transaction'
+import TransactionPage from './Transaction'
+import Payment from './Payment'
+
 
 
 const router=createBrowserRouter([
@@ -50,6 +53,10 @@ const router=createBrowserRouter([
   {
     path:'/transaction',
     element:<Transaction/>
+  },
+   {
+    path:'/payment',
+    element:<Payment/>
   }
 ])
 

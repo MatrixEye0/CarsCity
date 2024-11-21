@@ -45,7 +45,7 @@ function MyListing() {
       </div>
 
       {/* Listings */}
-      <div className='border-black rounded'>
+      <div className='border-black rounded mt-5'>
         {listings.length > 0 ? (
           listings.map((item, index) => (
             <div key={index}>

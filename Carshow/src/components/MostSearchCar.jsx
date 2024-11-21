@@ -12,6 +12,7 @@ import { CarListing } from "./../../configs/schema";
 import { desc, eq } from "drizzle-orm";
 import { useState, useEffect } from "react";
 import Service from "@/Shared/Service";
+import { db } from "./../../configs";
 
 function MostSearchCar() {
 

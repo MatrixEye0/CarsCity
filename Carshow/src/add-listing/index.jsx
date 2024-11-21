@@ -92,7 +92,7 @@ function AddListing() {
           <div>
             <h2 className="font-medium text-xl mb-6">Car Details</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {carDetails.carDetails.map((item, index) => (
+              {carDetails.carDetail.map((item, index) => (
                 <div key={index}>
                   <label className="text-sm flex gap-2 items-center mb-2">
                     <IconField icon={item?.icon} />
