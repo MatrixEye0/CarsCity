@@ -1,13 +1,12 @@
 import express from "express";
-import multer from "multer";
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
+import { upload } from "../multer.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const upload = multer({ dest: "uploads/" });
 export const router = express.Router();
 
 router.post("/api/upload", upload.single("img"), (req, res) => {
@@ -16,12 +15,9 @@ router.post("/api/upload", upload.single("img"), (req, res) => {
       return res.status(400).json({ message: "No file uploaded" });
     }
 
-
+    const name = `${Date.now()}_${req.file.originalname}`
     const tempPath = req.file.path;
-    const targetPath = path.join(
-      "uploads",
-      `${Date.now()}_${req.file.originalname}`
-    );
+    const targetPath = path.join("Carshow", "public",name);
 
     // Rename the temporary file to the target path
     fs.rename(tempPath, targetPath, (err) => {
@@ -33,8 +29,8 @@ router.post("/api/upload", upload.single("img"), (req, res) => {
       res.status(200).json({
         message: "File uploaded successfully",
         file: {
-          originalName: req.file.originalname,
-          storagePath: path.join(__dirname,targetPath), // Absolute path of the file
+          originalName: name,
+          storagePath: path.join(__dirname, targetPath), // Absolute path of the file
           size: req.file.size,
         },
       });
