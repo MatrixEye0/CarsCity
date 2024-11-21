@@ -4,16 +4,18 @@ import { BsFuelPump } from 'react-icons/bs';
 import { IoSpeedometerOutline } from 'react-icons/io5';
 import { GiGearStickPattern } from 'react-icons/gi';
 import { IoMdOpen } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 function CarItem({ car }) {
   const placeholderImage = '/CarsCity.png'; // Path to a placeholder image.
   return (
+    <Link to={'/listing-detail/'+car?.id}>
     <div className="rounded-xl bg-white border hover:shadow-md cursor-pointer">
       <h2 className="absolute m-2 bg-green-500 px-2 rounded-full text-sm text-white">New</h2>
 
       {car?.images?.length > 0 ? (
         <img
-          src={car.images[0].imageUrl}
+          src={car.images[0]?.imageUrl}
           width="100%"
           height={250}
           className="rounded-t-xl"
@@ -30,7 +32,7 @@ function CarItem({ car }) {
       )}
 
       <div className="p-4">
-        <h2 className="font-bold text-black text-lg mb-2">{car?.listingTitle }</h2>
+        <h2 className="font-bold text-black text-lg mb-2">{car?.listingtitle }</h2>
 
         <Separator className="h-[1px] w-full bg-gray-500 mb-4" />
 
@@ -59,6 +61,7 @@ function CarItem({ car }) {
         </div>
       </div>
     </div>
+    </Link>
   );
 }
 

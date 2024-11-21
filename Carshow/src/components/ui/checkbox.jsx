@@ -8,7 +8,7 @@ const Checkbox = React.forwardRef(({ className, size = 16, ...props }, ref) => {
     <CheckboxPrimitive.Root
       ref={ref}
       className={`flex items-center justify-center border border-gray-400 rounded transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${className}`}
-      style={{ width: 2, height: 2 }}
+      style={{ width: 4, height: 4 }}
       {...props}
     >
       <CheckboxPrimitive.Indicator className="flex items-center justify-center text-current">

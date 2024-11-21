@@ -1,6 +1,6 @@
 import React from "react";
 import CarItem from "./CarItem";
-import FakeData from "../Shared/FakeData";
+
 import {
   Carousel,
   CarouselContent,

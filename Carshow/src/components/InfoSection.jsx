@@ -22,21 +22,21 @@ function InfoSection() {
   
           <div className="p-8 sm:p-16 lg:p-24">
             <h2 className="text-2xl font-bold sm:text-3xl">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, debitis.
+              About our company
             </h2>
   
             <p className="mt-4 text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, molestiae! Quidem est
-              esse numquam odio deleniti, beatae, magni dolores provident quaerat totam eos, aperiam
-              architecto eius quis quibusdam fugiat dicta.
+            At CarsCity, we redefine the car-buying and selling experience with innovation, 
+            transparency, and efficiency. As a trusted platform, we connect buyers and sellers seamlessly, 
+            offering a wide range of vehicles to suit every preference and budget. Our commitment to
+             excellence ensures every car listed is thoroughly inspected, providing reliability and peace of mind. 
+             With cutting-edge technology and customer-first service, CarsCity simplifies the process,
+              making it faster and more convenient. Whether you’re seeking your dream car or looking to sell, 
+              CarsCity is your one-stop destination for all automotive needs.
+             Drive with confidence, powered by CarsCity’s unmatched expertise and dedication.
             </p>
   
-            <a
-              href="#"
-              className="mt-8 inline-block rounded border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-            >
-              Get in Touch
-            </a>
+        
           </div>
         </div>
       </div>

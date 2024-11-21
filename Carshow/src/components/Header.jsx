@@ -2,17 +2,23 @@ import { UserButton, useUser } from "@clerk/clerk-react";
 import React from "react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import Home from './../Home';
 
 function Header() {
   const { user, isSignedIn } = useUser();
   return (
     <div className="flex justify-between items-center shadow-sm p-3 pl-10 pr-10">
+
+      <Link to='/'>  
       <img src="CarsCity.png" width={150} height={80} />
+      </Link>
 
       <ul className="hidden md:flex gap-16 ">
-        <li className="font-medium hover:scale-105 translate-all cursor-pointer hover:text-primary">
+        <Link to='/' >
+        <li className="font-medium hover:scale-105 translate-all cursor-pointer hover:text-primary text-black">
           Home
         </li>
+        </Link>
         <li className="font-medium hover:scale-105 translate-all cursor-pointer hover:text-primary">
           Search
         </li>

@@ -1,29 +1,32 @@
-const FormatResult=(resp)=>{
-    let result=[];
-    resp.forEach((item)=>{
-        const listingId=item.carListing?.id;
-        if(!result[listingId]){
-            result[listingId]={
-                car:item.carListing,
-                images:[]
-            }
+const FormatResult = (resp) => {
+    let tempResult = {};
+
+    resp.forEach((item) => {
+        const listingId = item.carListing?.id;
+
+        // Initialize the structure for each listing if it doesn't exist
+        if (!tempResult[listingId]) {
+            tempResult[listingId] = {
+                car: item.carListing,
+                images: []
+            };
         }
 
-        if(item.carImages)
-        {
-            result[listingId].images.push(item.carImages)
+        // Add images if they exist
+        if (item.carImages) {
+            tempResult[listingId].images.push(item.carImages);
         }
-    }) 
-    const finalResult = [];
-    result.forEach((item)=>{
-finalResult.push({
-    ...item.car,
-    images:item.images
-});
     });
-    return finalResult;
-}
 
-export default{
+    // Convert the object to an array of formatted results
+    const finalResult = Object.values(tempResult).map((item) => ({
+        ...item.car,
+        images: item.images,
+    }));
+
+    return finalResult;
+};
+
+export default {
     FormatResult
-}
+};

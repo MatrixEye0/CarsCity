@@ -10,6 +10,7 @@ import AddListing from './add-listing'
 import SearchByCategory from './search/[category]'
 import SearchByOptions from './search'
 import ListingDetail from './listing-details/[id]'
+import Transaction from './Transaction'
 
 
 const router=createBrowserRouter([
@@ -43,8 +44,12 @@ const router=createBrowserRouter([
     element:<SearchByOptions/>
   },
   {
-    path:'/listing-details/:id',
+    path:'/listing-detail/:id',
     element:<ListingDetail/>
+  },
+  {
+    path:'/transaction',
+    element:<Transaction/>
   }
 ])
 

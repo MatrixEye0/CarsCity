@@ -1,0 +1,32 @@
+export default[
+    {
+        "label":"Category",
+        "name":"Category",
+        "icon":"FaCar"
+    },
+    {
+        "label":"Condition",
+        "name":"condition",
+        "icon":"FaCheckCircle"
+    },
+    {
+        "label":"Make",
+        "name":"make",
+        "icon":"FaIndustry"
+    },
+    {
+        "label":"Model",
+        "name":"model",
+        "icon":"FaCarSide"
+    },
+    {
+        "label":"Milaage",
+        "name":"millage",
+        "icon":"FaRoad"
+    },
+    {
+        "label":"Fuel Type",
+        "name":"fueltype",
+        "icon":"FaChargingStation"
+    }
+];
